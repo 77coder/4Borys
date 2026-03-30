@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Light Theme Variables */
+  --bg-color: #f8fafc;
+  --panel-bg: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --border-color: #e2e8f0;
+  --accent-color: #3b82f6;
+  --accent-hover: #2563eb;
+  --danger-color: #ef4444;
+  --success-color: #10b981;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.dark {
+  /* Dark Theme Variables */
+  --bg-color: #0f172a;
+  --panel-bg: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --border-color: #334155;
+  --accent-color: #3b82f6;
+  --accent-hover: #60a5fa;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Layout Utilities */
+.app-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 260px;
+  background-color: var(--panel-bg);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Typography & Forms */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+button.primary {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+button.primary:hover {
+  background-color: var(--accent-hover);
+}
+
+button.ghost {
+  background-color: transparent;
+  color: var(--text-secondary);
+}
+
+button.ghost:hover {
+  background-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+/* Navigation items */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+  margin-bottom: 0.25rem;
+}
+
+.nav-item:hover {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+}
+
+.nav-item.active {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* Card / Panel */
+.panel {
+  background-color: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s;
+}
